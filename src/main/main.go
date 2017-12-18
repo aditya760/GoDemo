@@ -7,9 +7,9 @@ func main() {
 
 func check(a int) bool{
     if( a % 2==0 ) {    
-        return true
+        return false
     }else{
-       return false
+       return true
     }
 }
  
