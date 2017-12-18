@@ -2,10 +2,10 @@ resources:
 - name: go-demo
   type: git
   source:
-    uri: https://code.cognizant.com/658630/GoDemo
+    uri: https://github.com/aditya760/GoDemo.git
     branch: master
-    username: 658630
-    password: Asiadi@1035
+    username: aditya760
+    password: asiadi486
 
  
 jobs:
