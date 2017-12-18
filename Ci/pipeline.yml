@@ -1,0 +1,30 @@
+resources:
+- name: go-demo
+  type: git
+  source:
+    uri: https://code.cognizant.com/658630/GoDemo
+    branch: master
+    username: 658630
+    password: Asiadi@1035
+
+ 
+jobs:
+  - name: get-source
+    public: true
+    plan:
+    - get: go-demo
+      trigger: true
+  # - name: job-unit-tests
+  #   plan:
+  #   - get: hello-go
+  #     passed: [get-source]
+  #     trigger: true
+  #   - task: task-unit-tests
+  #     file: hello-go/ci/tasks/task-unit-tests.yml
+  # - name: job-build
+  #   plan:
+  #   - get: hello-go
+  #     trigger: true
+  #     passed: [job-unit-tests]
+  #   - task: task-build
+  #     file: hello-go/ci/tasks/task-build.yml
