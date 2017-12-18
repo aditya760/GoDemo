@@ -7,9 +7,9 @@ image_resource:
     tag: 1.7.1
 
 inputs:
-- name: GoDemo
+- name: hello-go
 outputs:
 - name: coverage-results
 
 run:
-  path: ./GoDemo/Ci/Scripts/unit-test.sh
+  path: ./hello-go/Ci/Scripts/unit-test.sh
