@@ -12,4 +12,8 @@ outputs:
 - name: coverage-results
 
 run:
-  path: hello-go/Ci/Scripts/unit-test.sh
+  path: sh
+  args:
+  - -exc
+  - |
+    ls -ltr
