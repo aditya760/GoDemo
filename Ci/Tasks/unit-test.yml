@@ -18,5 +18,8 @@ run:
   - |
     ls -ltr
     cd hello-go/src/main 
+    pwd
+    echo "START TESTING"
     go test
+    echo "TEST DONE"
 
