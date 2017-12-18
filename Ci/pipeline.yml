@@ -1,30 +1,29 @@
-resources:
-- name: go-demo
+
+  resources:
+- name: hello-go
   type: git
   source:
     uri: https://github.com/aditya760/GoDemo.git
     branch: master
     username: aditya760
     password: asiadi486
-
- 
 jobs:
   - name: get-source
     public: true
+     plan:
+   - get: hello-go
+     trigger: true
+  - name: job-unit-tests
     plan:
-    - get: go-demo
+    - get: hello-go
+      passed: [get-source]
       trigger: true
-  # - name: job-unit-tests
-  #   plan:
-  #   - get: hello-go
-  #     passed: [get-source]
-  #     trigger: true
-  #   - task: task-unit-tests
-  #     file: hello-go/ci/tasks/task-unit-tests.yml
-  # - name: job-build
-  #   plan:
-  #   - get: hello-go
-  #     trigger: true
-  #     passed: [job-unit-tests]
-  #   - task: task-build
-  #     file: hello-go/ci/tasks/task-build.yml
+    - task: task-unit-tests
+      file: GoDemo/Ci/Tasks/unit-test.yml
+  #- name: job-build
+#    plan:
+#    - get: hello-go
+#      trigger: true
+#      passed: [job-unit-tests]
+#   - task: task-build
+#      file: hello-go/ci/tasks/task-build.yml
