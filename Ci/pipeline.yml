@@ -1,5 +1,4 @@
-
-  resources:
+resources:
 - name: hello-go
   type: git
   source:
@@ -10,9 +9,10 @@
 jobs:
   - name: get-source
     public: true
-     plan:
-   - get: hello-go
-     trigger: true
+    plan:
+    - get: hello-go
+      trigger: true
+
   - name: job-unit-tests
     plan:
     - get: hello-go

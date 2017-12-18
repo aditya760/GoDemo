@@ -14,6 +14,9 @@ outputs:
 run:
   path: sh
   args:
-  - -exec
+  - -exc
   - |
     ls -ltr
+    cd hello-go/src/main 
+    go test
+
