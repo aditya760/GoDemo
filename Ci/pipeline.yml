@@ -20,10 +20,10 @@ jobs:
       trigger: true
     - task: task-unit-tests
       file: hello-go/Ci/Tasks/unit-test.yml
-  #- name: job-build
-#    plan:
-#    - get: hello-go
-#      trigger: true
-#      passed: [job-unit-tests]
-#   - task: task-build
-#      file: hello-go/ci/tasks/task-build.yml
+  - name: job-build
+    plan:
+    - get: hello-go
+      trigger: true
+      passed: [job-unit-tests]
+    - task: task-build
+      file: hello-go/ci/Tasks/task-build.yml
