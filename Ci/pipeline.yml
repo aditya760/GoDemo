@@ -19,7 +19,7 @@ jobs:
       passed: [get-source]
       trigger: true
     - task: task-unit-tests
-      file: GoDemo/Ci/Tasks/unit-test.yml
+      file: hello-go/Ci/Tasks/unit-test.yml
   #- name: job-build
 #    plan:
 #    - get: hello-go
