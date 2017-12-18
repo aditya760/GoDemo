@@ -13,4 +13,4 @@ outputs:
 - name: coverage-results
 
 run:
-  path: ./GoDemo/Ci/Scripts/unit-tests.sh
+  path: ./GoDemo/Ci/Scripts/unit-test.sh
